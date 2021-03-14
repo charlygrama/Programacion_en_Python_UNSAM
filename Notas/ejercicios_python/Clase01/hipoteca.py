@@ -11,4 +11,4 @@ while saldo > 0:
     saldo = saldo * (1+tasa/12) - pago_mensual
     total_pagado = total_pagado + pago_mensual
 
-print('Total pagado', round(total_pagado, 2))
+print('Total pagado: ', round(total_pagado, 2))
