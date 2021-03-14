@@ -1,23 +1,37 @@
 # adelantos.py
-# Ejercicio 1.9: Calculadora de Adelantos
+# Ejercicio 1.9 y 1.10: Calculadora de Adelantos y Tabla
 
 saldo = 500000.0
 tasa = 0.05
 pago_mensual = 2684.11
 total_pagado = 0.0
 total_meses = 0
-adelanto = 0
+
+pago_extra_mes_comienzo = 61
+pago_extra_mes_fin = 108
+pago_extra = 1000
 
 while saldo > 0:
-    if adelanto < 12000:
-        saldo = saldo * (1 + tasa/12) - pago_mensual - 1000 
-        total_pagado = total_pagado + pago_mensual + 1000 
+    if total_meses < pago_extra_mes_comienzo:
+        saldo = saldo * (1 + tasa/12) - pago_mensual   
+        total_pagado = total_pagado + pago_mensual 
         total_meses += 1
-        adelanto += 1000
-    else:
+    elif pago_extra_mes_comienzo <= total_meses <= pago_extra_mes_fin:
+        saldo = saldo * (1 + tasa/12) - pago_mensual - pago_extra  
+        total_pagado = total_pagado + pago_mensual  + pago_extra
+        total_meses += 1  
+    else: 
         saldo = saldo * (1 + tasa/12) - pago_mensual  
         total_pagado = total_pagado + pago_mensual  
         total_meses += 1
+        # if saldo < pago_mensual: 
+        #     total_pagado += saldo     
+        #     saldo = saldo * (1 + tasa/12) - pago_mensual
+        #     total_meses += 1
+        #     pago_mensual = saldo
+        #     total_pagado = total_pagado + pago_mensual
+    print (total_meses, round(saldo, 2), round(total_pagado, 2))
 
-print('Total pagado: ', round(total_pagado, 2))
-print('Total de meses: ', total_meses)
+print( 'Total meses: ', total_meses)
+print( 'Total pagado: ', round(total_pagado, 2))
+print('saldo: ', saldo)
