@@ -11,8 +11,12 @@ pago_extra_mes_comienzo = 61
 pago_extra_mes_fin = 108
 pago_extra = 1000
 
-while saldo > 0:
-    if total_meses < pago_extra_mes_comienzo:
+while saldo > 0: 
+    if total_meses <= 11:
+        saldo = saldo * (1 + tasa/12) - pago_extra   
+        total_pagado = total_pagado + pago_extra 
+        total_meses += 1
+    if 11 < total_meses < pago_extra_mes_comienzo:
         saldo = saldo * (1 + tasa/12) - pago_mensual   
         total_pagado = total_pagado + pago_mensual 
         total_meses += 1
@@ -20,18 +24,16 @@ while saldo > 0:
         saldo = saldo * (1 + tasa/12) - pago_mensual - pago_extra  
         total_pagado = total_pagado + pago_mensual  + pago_extra
         total_meses += 1  
-    else: 
-        saldo = saldo * (1 + tasa/12) - pago_mensual  
+    elif total_meses > pago_extra_mes_fin: 
+        saldo = saldo * (1 + tasa/12) - pago_mensual
         total_pagado = total_pagado + pago_mensual  
         total_meses += 1
-        # if saldo < pago_mensual: 
-        #     total_pagado += saldo     
-        #     saldo = saldo * (1 + tasa/12) - pago_mensual
-        #     total_meses += 1
-        #     pago_mensual = saldo
-        #     total_pagado = total_pagado + pago_mensual
+
+        if saldo < 0:
+            total_pagado += saldo
+            saldo -= saldo
     print (total_meses, round(saldo, 2), round(total_pagado, 2))
 
-print( 'Total meses: ', total_meses)
 print( 'Total pagado: ', round(total_pagado, 2))
+print( 'Meses: ', total_meses)
 print('saldo: ', saldo)
