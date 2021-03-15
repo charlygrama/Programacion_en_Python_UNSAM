@@ -1,6 +1,5 @@
 # rebotes.py
-# Archivo de ejemplo
-# Ejercicio
+# Ejercicio 1.5: La pelota que rebota
 salto = 0
 altura = 100
 h = 3/5
