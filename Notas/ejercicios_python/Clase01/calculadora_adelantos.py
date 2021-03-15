@@ -1,5 +1,5 @@
 # adelantos.py
-# Ejercicio 1.9 y 1.10: Calculadora de Adelantos y Tabla
+# Ejercicio 1.9, 1.10, 1.11: Calculadora de Adelantos, Tabla, Bonus 
 
 saldo = 500000.0
 tasa = 0.05
@@ -13,9 +13,9 @@ pago_extra = 1000
 
 while saldo > 0: 
     # if total_meses <= 12:
-    #     saldo = saldo * (1 + tasa/12) - pago_extra   
-    #     total_pagado = total_pagado + pago_extra 
-    #     total_meses += 1]
+    #     saldo = saldo * (1 + tasa/12) - pago_mensual - pago_extra 
+    #     total_pagado = total_pagado + pago_mensual  + pago_extra
+    #     total_meses += 1
     if  total_meses < pago_extra_mes_comienzo:
         saldo = saldo * (1 + tasa/12) - pago_mensual   
         total_pagado = total_pagado + pago_mensual 
