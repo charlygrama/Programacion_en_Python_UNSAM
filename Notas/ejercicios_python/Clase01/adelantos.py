@@ -9,11 +9,11 @@ total_meses = 0
 adelanto = 0
 
 while saldo > 0:
-    if adelanto < 12000:
+    if total_meses < 12:
         saldo = saldo * (1 + tasa/12) - pago_mensual - 1000 
         total_pagado = total_pagado + pago_mensual + 1000 
         total_meses += 1
-        adelanto += 1000
+        # adelanto += 1000
     else:
         saldo = saldo * (1 + tasa/12) - pago_mensual  
         total_pagado = total_pagado + pago_mensual  
