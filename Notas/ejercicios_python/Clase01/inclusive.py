@@ -5,6 +5,8 @@ frase = 'todos somos programadores'
 palabras = frase.split()
 frase_t = ''
 for palabra in palabras:
+    palabra_nueva = list(palabra)
     if palabra[-2] == 'o':
-        palabra[-2] = 'e' 
-        print( frase_t )
+        palabra_nueva[-2] = 'e' 
+    frase_t += ''.join(palabra_nueva)
+print(frase_t)
