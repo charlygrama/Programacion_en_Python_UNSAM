@@ -12,10 +12,6 @@ pago_extra_mes_fin = 108
 pago_extra = 1000
 
 while saldo > 0: 
-    # if total_meses <= 12:
-    #     saldo = saldo * (1 + tasa/12) - pago_mensual - pago_extra 
-    #     total_pagado = total_pagado + pago_mensual  + pago_extra
-    #     total_meses += 1
     if  total_meses < pago_extra_mes_comienzo:
         saldo = saldo * (1 + tasa/12) - pago_mensual   
         total_pagado = total_pagado + pago_mensual 
