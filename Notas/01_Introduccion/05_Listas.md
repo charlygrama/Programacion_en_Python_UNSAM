@@ -401,7 +401,7 @@ A pesar de que es técnicamente posible hacer una estructura de listas muy compl
 Queremos hacer un traductor que cambie las palabras masculinas de una frase por su versión neutra. Como primera aproximación, completá el siguiente código para reemplazar todas las letras 'o' que figuren en el último o anteúltimo caracter de cada palabra por una 'e'. Por ejemplo 'todos somos programadores' pasaría a ser 'todes somes programadores'. Guardá tu código en el archivo `inclusive.py`
 
 ```python
->>> frase = 'todos somos programadores'
+>>> frase = 'todos somos programadores' 
 >>> palabras = frase.split()
 >>> for palabra in palabras:
         if ?
