@@ -28,11 +28,12 @@ while saldo > 0:
         saldo = saldo * (1 + tasa/12) - pago_mensual
         total_pagado = total_pagado + pago_mensual  
         total_meses += 1
-
-        if saldo < 0:
-            total_pagado += saldo
-            saldo -= saldo
-    print (total_meses, round(saldo, 2), round(total_pagado, 2))
+        
+        if saldo <= pago_mensual:
+            total_pagado += pago_mensual
+            saldo = 0
+            total_meses += 1
+        print (total_meses, round(saldo, 2), round(total_pagado, 2))
 
 print( 'Total pagado: ', round(total_pagado, 2))
 print( 'Meses: ', total_meses)
