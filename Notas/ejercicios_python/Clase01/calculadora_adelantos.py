@@ -33,8 +33,10 @@ while saldo > 0:
             total_pagado += pago_mensual
             saldo = 0
             total_meses += 1
-        print (total_meses, round(saldo, 2), round(total_pagado, 2))
+        print (total_meses, '|', round(saldo, 2), '|', round(total_pagado, 2), '|')
 
+print('---------------------------------------------------')
 print( 'Total pagado: ', round(total_pagado, 2))
 print( 'Meses: ', total_meses)
 print('saldo: ', saldo)
+print('---------------------------------------------------')
