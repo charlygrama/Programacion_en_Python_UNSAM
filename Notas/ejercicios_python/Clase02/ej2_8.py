@@ -1,4 +1,4 @@
-### Ejercicio 2.6: Transformar un script en una función
+### Ejercicio 2.8: Administración de errores
 costo = 0
 def costo_camion(costo_camion):
     costo_total = 0
