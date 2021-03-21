@@ -124,10 +124,6 @@ Alternativamente, esa excepción puede ser atrapada por un bloque `try-except`, 
 Probá primero definir una función simple:
 
 ```python
->>> def saludar(nombre):
-        'Saluda a alguien'
-        print('Hola', nombre)
-
 >>> saludar('Guido')
 Hola Guido
 >>> saludar('Paula')
