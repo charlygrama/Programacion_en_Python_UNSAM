@@ -1,13 +1,13 @@
 ### Ejercicio 2.14: Diccionario geringoso.
-def diccionario_geringoso():
+def diccionario_geringoso(capadepenapa):
     cadena = 'Geringoso'
-    capadepenapa = ''
+    # capadepenapa = ''
 
     for c in cadena:
         if c in 'aeiou':
             capadepenapa += c + 'p' + c
         else:
             capadepenapa += c
-    return capadepenapa
+    print(capadepenapa)
 
-diccionario_geringoso()
+diccionario_geringoso('')
