@@ -1,7 +1,4 @@
 ### Ejercicio 2.15: Lista de tuplas
-### Ejercicio 2.6: Transformar un script en una función
-'''Computa el precio total del 
-camion (cajones * precio) de un archivo'''
 costo = 0
 import csv
 def costo_camion(costo_camion):
