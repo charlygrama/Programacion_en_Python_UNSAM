@@ -1,6 +1,5 @@
 ### Ejercicio 2.7: Buscar precios
 def buscar_precio(nombre_fruta):
-    precio = 0
     with open('g:/proyectos/python/python_UNSAM/Notas/ejercicios_python/Data/precios.csv', 'rt') as f:
         for linea in f:
             fila = linea.split(',')
