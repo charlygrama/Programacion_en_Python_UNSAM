@@ -1,7 +1,6 @@
 ### Ejercicio 2.14: Diccionario geringoso.
 def diccionario_geringoso(l1):
     l2 = []
-    # t = ('', '', '')
     d = { 
         lista[0] : '', 
         lista[1] : '', 
@@ -17,8 +16,11 @@ def diccionario_geringoso(l1):
 
         l2.append(capadepenapa)
     
-    dict_from_list = dict(zip(lista, l2)) 
-    print(dict_from_list)
+    dicc_de_listas = {}
+    
+    for i in range(len(l1)):
+        dicc_de_listas[ l1[i] ] = l2[i]
+    print(dicc_de_listas)
 
 lista = ['banana', 'manzana', 'mandarina']
 diccionario_geringoso(lista)
