@@ -1,4 +1,5 @@
 ### Ejercicio 2.14: Diccionario geringoso.
+# https://www.delftstack.com/es/howto/python/python-convert-list-into-dictionary/ link para metodo zip
 def diccionario_geringoso(l1):
     l2 = []
     # t = ('', '', '')
