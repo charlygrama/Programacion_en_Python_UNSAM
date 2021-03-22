@@ -1,21 +1,30 @@
 ### Ejercicio 2.16: Lista de diccionarios
-costo = 0
-camion = []
 import csv
+t = []
+camion = {}
 from pprint import pprint
 def leer_camion(costo_camion):
-    costo_total = 0
+    # costo = 0.0
     with open('g:/proyectos/python/python_UNSAM/Notas/ejercicios_python/Data/camion.csv', 'rt') as f:
         lineas = csv.reader(f)
         headers = next(lineas)
+        
         for linea in lineas:
-            lote = ((linea[0]), int(linea[1]), float(linea[2]))
-            ncajones = int(linea[1])
-            precio = float(linea[2])
-            camion.append(lote)
-            costo_total += ncajones * precio
-    
-    return camion
+            lote = (linea[0]), int(linea[1]), float(linea[2])
+            t.append(lote)
+            for i in range(len(lote)):
+                camion[ headers[i] ] = lote[i]
+                print(camion)
+                
 
 camion = leer_camion('../Data/camion.csv')
 pprint(camion)
+
+
+
+
+            # for i in t:
+            #     costo += i[1] * i[2]
+                # ncajones = int(linea[1])
+                # precio = float(linea[2])
+                # costo_total += ncajones * precio
