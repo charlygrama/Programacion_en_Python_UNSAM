@@ -13,17 +13,10 @@ def leer_camion(costo_camion):
             lote = (linea[0]), int(linea[1]), float(linea[2])
             t.append(lote)
             camion = dict(zip(headers, lote)) 
-            print(camion) 
-
+            print(camion)
     return camion
+
 camion = leer_camion('../Data/camion.csv')
-pprint(camion)
 
 
-
-
-            # for i in t:
-            #     costo += i[1] * i[2]
-                # ncajones = int(linea[1])
-                # precio = float(linea[2])
-                # costo_total += ncajones * precio
+           
