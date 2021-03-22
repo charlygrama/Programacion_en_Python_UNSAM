@@ -18,4 +18,4 @@ def leer_camion(costo_camion):
     return camion
 
 camion = leer_camion('../Data/camion.csv')
-print(camion)
+pprint(camion)
