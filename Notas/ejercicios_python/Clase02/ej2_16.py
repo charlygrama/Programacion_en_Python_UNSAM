@@ -12,11 +12,10 @@ def leer_camion(costo_camion):
         for linea in lineas:
             lote = (linea[0]), int(linea[1]), float(linea[2])
             t.append(lote)
-            for i in range(len(lote)):
-                camion[ headers[i] ] = lote[i]
-                print(camion)
-                
+            camion = dict(zip(headers, lote)) 
+            print(camion) 
 
+    return camion
 camion = leer_camion('../Data/camion.csv')
 pprint(camion)
 
