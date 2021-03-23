@@ -14,8 +14,7 @@ def leer_camion(costo_camion):
             lote = (linea[0]), int(linea[1]), float(linea[2])
             lista.append(lote)
             camion = dict(zip(headers, lote)) 
-
-            nombre = linea[0]
+            
             cajones = int(linea[1])
             precio = float(linea[2])
             costo += cajones * precio   
