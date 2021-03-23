@@ -9,7 +9,7 @@ def leer_camion(costo_camion):
     with open('g:/proyectos/python/python_UNSAM/Notas/ejercicios_python/Data/camion.csv', 'rt') as f:
         lineas = csv.reader(f)
         headers = next(lineas)
-            
+
         for linea in lineas:
             lote = (linea[0]), int(linea[1]), float(linea[2])
             lista.append(lote)
@@ -20,7 +20,6 @@ def leer_camion(costo_camion):
             costo += cajones * precio   
 
             print(camion)
-            # print(costo)
 
     return camion, costo
 
