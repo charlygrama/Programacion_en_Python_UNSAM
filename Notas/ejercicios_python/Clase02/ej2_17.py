@@ -16,4 +16,3 @@ def leer_precios(precios):
             pass
     return precios                  
 precios = leer_precios('../Data/precios.csv')
-# precios['Naranja']
