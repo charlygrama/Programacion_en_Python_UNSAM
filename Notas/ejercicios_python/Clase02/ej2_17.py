@@ -8,7 +8,7 @@ def leer_precios(precios):
         lineas = csv.reader(f)
         try:
             for linea in lineas:
-                precios[linea[0]] = float(linea[1])
+                lote = linea[0], float(linea[1])
                 items = [(lote)]
                 precios = dict(items)
                 print(precios)
