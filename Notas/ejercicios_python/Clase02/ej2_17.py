@@ -12,9 +12,9 @@ def leer_precios(precios):
                 lote = linea[0], float(linea[1])
                 items = [(lote)]
                 d_precios = dict(items)
- 
                 print(d_precios)
         except IndexError:
             pass
     return precios                  
+
 precios = leer_precios('../Data/precios.csv')
