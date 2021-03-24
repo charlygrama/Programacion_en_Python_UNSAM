@@ -1,4 +1,4 @@
-### Ejercicio 2.15: Lista de tuplas
+### informe.py
 import csv
 from pprint import pprint
 camion = {}
@@ -60,9 +60,13 @@ def buscar_precio(fruta):
     return float(precio_fruta)
 
 print('-----------------------------------------------------------------------------------------------------------------------')
-camion = leer_camion('../Data/camion.csv') 
-costo = costo_camion('../Data/camion.csv')
-precios = leer_precios('../Data/precios.csv')
+
+path_camion = '../Data/camion.csv'
+path_precios_venta = '../Data/precios.csv'
+
+camion = leer_camion(path_camion) 
+costo = costo_camion(path_precios_venta)
+precios = leer_precios(path_precios_venta)
 # print(precios['Naranja'])
 # buscar_precio('Papa')
 
