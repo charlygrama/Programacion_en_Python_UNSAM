@@ -74,8 +74,4 @@ for producto in precios:
 
 ganancia = ventas - costo
 print('El costo del camion fue: {0} | Las ventas fueron: {1} | La ganancia obtenida fue {2} '.format(costo, ventas, format(ganancia, '0.2f')))
-
 print('-----------------------------------------------------------------------------------------------------------------------')
-
-
-
