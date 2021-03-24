@@ -2,9 +2,10 @@
 import csv
 from pprint import pprint
 camion = {}
-d_precios = {}
-costo = 0.0
 lista = []
+costo = 0.0
+ventas = 0.0
+ganancia = 0.0
 
 def leer_camion(camion):
     lista_camion = []
@@ -15,9 +16,9 @@ def leer_camion(camion):
             nombre = linea[0] 
             cajones = int(linea[1])
             precio = float(linea[2])
-            dicc_camion = {'nombre': nombre, 'precio' : precio, 'cajones' : cajones}
+            dicc_camion = {'nombre': nombre, 'cajones' : cajones, 'precio' : precio}
             lista_camion.append(dicc_camion)
-    return dicc_camion
+    return lista_camion
 
 def costo_camion(costo_camion):
     costo = 0.0
@@ -58,25 +59,23 @@ def buscar_precio(fruta):
                 pass
     return float(precio_fruta)
 
-print('-------------------------------------------------------------------------')
-
+print('-----------------------------------------------------------------------------------------------------------------------')
 camion = leer_camion('../Data/camion.csv') 
 costo = costo_camion('../Data/camion.csv')
 precios = leer_precios('../Data/precios.csv')
 # print(precios['Naranja'])
 # buscar_precio('Papa')
 
+for producto in precios:
+    for p in camion:
+        if producto in p['nombre']:
+            ventas += precios[producto] * p['cajones']
 
-print('-------------------------------------------------------------------------')
-ventas = 0
-for fruto in camion:
-    ventas += buscar_precio(fruto['nombre']) * fruto['cajones']
 
 ganancia = ventas - costo
+print('El costo del camion fue: {0} | Las ventas fueron: {1} | La ganancia obtenida fue {2} '.format(costo, ventas, format(ganancia, '0.2f')))
 
-mostrar = f'Costo de Camion: {costo} | Ventas: {ventas} | Ganancia: {ganancia}' 
-print(mostrar)  
-
+print('-----------------------------------------------------------------------------------------------------------------------')
 
 
 
