@@ -12,4 +12,4 @@ def costo_camion(costo_camion):
     return costo
 
 costo = costo_camion('../Data/camion.csv')
-print('EL costo del camión es: ', costo)
+print('El costo del camión es: ', costo)
