@@ -1,15 +1,20 @@
-### Ejercicio 2.2: Lectura de un archivo de datos
+# Ejercicio 3.8: Un ejemplo práctico de enumerate()
 import csv
+costo = {}
+from pprint import pprint
 def costo_camion(costo_camion):
-    costo = 0.0
-    with open('g:/proyectos/python/python_UNSAM/Notas/ejercicios_python/Data/camion.csv', 'rt') as c:
-        lineas = csv.reader(c)
-        next(lineas)
-        for linea in lineas:
-            cajones = int(linea[1])
-            precio = float(linea[2])
-            costo += cajones * precio 
-    return costo
+    with open('G:/proyectos/python/python_UNSAM/Notas/ejercicios_python/Data/missing.csv', 'rt') as f:
+        lineas = csv.reader(f)
+        for n_fila, fila in enumerate(lineas, start = 1):
+            print(n_fila, fila)
+            try:
+                fila[0]
+                int(fila[1])
+                float(fila[2])
+            except ValueError:
+                print('------------------------------------------------------------------')
+                print(f'Fila {n_fila}: No pude interpretar: {fila}') 
+                print('------------------------------------------------------------------')
+    return lineas
 
 costo = costo_camion('../Data/missing.csv')
-print('El costo del camión es: ', costo)
