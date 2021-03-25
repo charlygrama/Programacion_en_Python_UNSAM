@@ -46,9 +46,26 @@
 
 #%%
 # Ejercicio 3.3: Tipos
-#Comentario: El error es que las palabras del código estaban mal escritas
+#Comentario: El error es que tiene_uno(1984) pasa como parámetro un dato de tipo 'int' y no se puede aplicar el metodo len, además cuando encuentra una 'a' 
+# sigue recorriendo la expresion 
 #    Lo corregí :
-            # * definiendo bien las funciones agregando ':'
-            # * agregando '==' en el if
+            # * agregando ' ' a tiene_uno(1984) para que pase como parámetro str
+            # * cuando encuentre una 'a' que retorne True
             # * cambiando el Falso por False
 #    A continuación va el código corregido
+
+def tiene_uno(expresion):
+    n = len(expresion)
+    i = 0
+    tiene = False
+    while (i<n) and not tiene:
+        if expresion[i] == '1':
+            return True
+        i += 1
+    return tiene
+
+
+tiene_uno('UNSAM 2020')
+tiene_uno('La novela 1984 de George Orwell')
+tiene_uno('1984')
+
