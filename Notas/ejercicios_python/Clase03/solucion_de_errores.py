@@ -54,18 +54,60 @@
             # * cambiando el Falso por False
 #    A continuación va el código corregido
 
-def tiene_uno(expresion):
-    n = len(expresion)
-    i = 0
-    tiene = False
-    while (i<n) and not tiene:
-        if expresion[i] == '1':
-            return True
-        i += 1
-    return tiene
+# def tiene_uno(expresion):
+#     n = len(expresion)
+#     i = 0
+#     tiene = False
+#     while (i<n) and not tiene:
+#         if expresion[i] == '1':
+#             return True
+#         i += 1
+#     return tiene
+
+# tiene_uno('UNSAM 2020')
+# tiene_uno('La novela 1984 de George Orwell')
+# tiene_uno('1984')
+
+#%%
+# Ejercicio 3.4: Alcances
+#Comentario: El error es que suma(a,b) devolvia 'none' ya que c no estaba definida y 'a' y 'b' estaban definidas globalmente y 
+# en la funcion sobreescribiendo sus valores 
+#    Lo corregí :
+            # * agregando un return a la funcion y eliminando c dentro de la funcion
+#    A continuación va el código corregido
 
 
-tiene_uno('UNSAM 2020')
-tiene_uno('La novela 1984 de George Orwell')
-tiene_uno('1984')
+# def suma(a,b):
+#     return a + b 
+  
+# a = 2
+# b = 3
+# c = suma(a,b)
+# print(f"La suma da {a} + {b} = {c}")
 
+#%%
+# Ejercicio 3.5: Pisando memoria
+#Comentario: El error es que suma(a,b) devolvia 'none' ya que c no estaba definida y 'a' y 'b' estaban definidas globalmente y 
+# en la funcion sobreescribiendo sus valores 
+#    Lo corregí :
+            # * agregando un return a la funcion y eliminando c dentro de la funcion
+#    A continuación va el código corregido
+
+import csv
+from pprint import pprint
+
+def leer_camion(nombre_archivo):
+    camion=[]
+    registro={}
+    with open('../Data/camion.csv',"rt") as f:
+        filas = csv.reader(f)
+        encabezado = next(filas)
+        for fila in filas:
+            registro[encabezado[0]] = fila[0]
+            registro[encabezado[1]] = int(fila[1])
+            registro[encabezado[2]] = float(fila[2])
+            camion.append(registro)
+    return camion
+
+camion = leer_camion('../Data/camion.csv')
+pprint(camion)
