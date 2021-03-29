@@ -64,11 +64,11 @@ print('-------------------------------------------------------------------------
 path_camion = '../Data/camion.csv'
 path_precios_venta = '../Data/precios.csv'
 
-camion = leer_camion(path_camion) 
-costo = costo_camion(path_precios_venta)
+camion = costo_camion(path_camion) 
 precios = leer_precios(path_precios_venta)
-# print(precios['Naranja'])
-# buscar_precio('Papa')
+# informe = hacer_informe(camion, precios)
+# for r in informe:
+#     print(r)
 
 for producto in precios:
     for p in camion:
