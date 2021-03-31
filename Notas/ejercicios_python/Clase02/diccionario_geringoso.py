@@ -2,10 +2,7 @@
 # https://www.delftstack.com/es/howto/python/python-convert-list-into-dictionary/ link para metodo zip
 def diccionario_geringoso(l1):
     l2 = []
-<<<<<<< HEAD
-=======
     
->>>>>>> modi
     for c in range(0, len(l1)):
         capadepenapa = '' 
         for c in l1[c]:
