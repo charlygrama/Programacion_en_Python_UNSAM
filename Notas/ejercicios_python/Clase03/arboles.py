@@ -17,7 +17,6 @@ def leer_parque(archivo, parque):
 
 ### Ejercicio 3.19: Determinar las especies en un parque
 def especies(lista_arboles):
-    cantidad = 0
     especies = []
 
     for arbol in lista_arboles:
@@ -26,7 +25,6 @@ def especies(lista_arboles):
     return especies_
 
 
-# especies_ = {}
 archivo = leer_parque('../Data/arbolado.csv', 'GENERAL PAZ')
 conjunto = especies(archivo)
 # pprint(archivo)
