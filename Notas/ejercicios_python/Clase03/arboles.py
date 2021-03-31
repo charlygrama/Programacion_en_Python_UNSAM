@@ -15,5 +15,20 @@ def leer_parque(archivo, parque):
                 lista_arboles.append(record)
     return lista_arboles
 
+### Ejercicio 3.19: Determinar las especies en un parque
+def especies(lista_arboles):
+    cantidad = 0
+    especies = []
+
+    for arbol in lista_arboles:
+        especies.append(arbol['nombre_com'])
+        especies_ = set(especies)
+    return especies_
+
+
+# especies_ = {}
 archivo = leer_parque('../Data/arbolado.csv', 'GENERAL PAZ')
-pprint(archivo)
+conjunto = especies(archivo)
+# pprint(archivo)
+pprint(conjunto)
+
