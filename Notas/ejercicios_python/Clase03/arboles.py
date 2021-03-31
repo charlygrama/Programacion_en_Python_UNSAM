@@ -16,4 +16,4 @@ def leer_parque(archivo, parque):
     return lista_arboles
 
 archivo = leer_parque('../Data/arbolado.csv', 'GENERAL PAZ')
-print(archivo)
+pprint(archivo)
