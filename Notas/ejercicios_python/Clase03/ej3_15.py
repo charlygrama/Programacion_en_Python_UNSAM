@@ -9,7 +9,7 @@ ganancia = 0.0
 
 def leer_camion(camion):
     lista_camion = []
-    with open('../Data/camion.csv', 'rt') as c:
+    with open('G:/proyectos/python/python_UNSAM/Notas/ejercicios_python/Data/camion.csv', 'rt') as c:
         lineas = csv.reader(c)
         next(lineas)
         for linea in lineas:
@@ -22,7 +22,7 @@ def leer_camion(camion):
 
 def leer_precios(precios):
     dicc_precios = {}
-    with open('../Data/precios.csv', 'rt') as p:
+    with open('../python_UNSAM/Notas/ejercicios_python/Data/precios.csv', 'rt') as p:
         lineas = csv.reader(p)
         for linea in lineas:
             try:
@@ -35,7 +35,7 @@ def leer_precios(precios):
 
 def buscar_precio(fruta):
     precio_fruta = 0
-    with open('../Data/precios.csv', 'rt') as f:
+    with open('../python_UNSAM/Notas/ejercicios_python/Data/precios.csv', 'rt') as f:
         lineas = csv.reader(f)
         for linea in lineas:
             try:
@@ -66,8 +66,10 @@ path_precios_venta = '../Data/precios.csv'
 camion = leer_camion(path_camion)
 precios = leer_precios(path_precios_venta)
 informe = hacer_informe(camion, precios)
+
 for nombre, cajones, precio, cambio in informe:
-        print(f'{nombre:>10s} {cajones:>10d} {precio:>10.2f} {cambio:>10.2f}')
+        print(f'{nombre:>10s} {cajones:>10d} {precio:>10.2f} {cambio:>10.2f} ')
+      
 print('-----------------------------------------------------------------------------------------------------------------------')
 
 

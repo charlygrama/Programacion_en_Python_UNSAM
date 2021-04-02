@@ -46,8 +46,8 @@ tiene_a('La novela 1984 de George Orwell')
 
 #%%
 # Ejercicio 3.3: Tipos
-#Comentario: El error es que tiene_uno(1984) pasa como parámetro un dato de tipo 'int' y no se puede aplicar el metodo len, además cuando encuentra una 'a' 
-# sigue recorriendo la expresion 
+#Comentario: El error es que tiene_uno(1984) pasa como parámetro un dato de tipo 'int' y no se puede aplicar el metodo len, además cuando encuentra una 'a'
+# sigue recorriendo la expresion
 #    Lo corregí :
             # * agregando ' ' a tiene_uno(1984) para que pase como parámetro str
             # * cuando encuentre una 'a' que retorne True
@@ -70,16 +70,16 @@ tiene_uno('1984')
 
 #%%
 # Ejercicio 3.4: Alcances
-#Comentario: El error es que suma(a,b) devolvia 'none' ya que c no estaba definida y 'a' y 'b' estaban definidas globalmente y 
-# en la funcion sobreescribiendo sus valores 
+#Comentario: El error es que suma(a,b) devolvia 'none' ya que c no estaba definida y 'a' y 'b' estaban definidas globalmente y
+# en la funcion sobreescribiendo sus valores
 #    Lo corregí :
             # * agregando un return a la funcion y eliminando c dentro de la funcion
 #    A continuación va el código corregido
 
 
 def suma(a,b):
-    return a + b 
-  
+    return a + b
+
 a = 2
 b = 3
 c = suma(a,b)
@@ -87,7 +87,7 @@ print(f"La suma da {a} + {b} = {c}")
 
 #%%
 # Ejercicio 3.5: Pisando memoria
-#Comentario: El error era que se hacia referencia a una ubicacion incorrecta de camion.csv 
+#Comentario: El error era que se hacia referencia a una ubicacion incorrecta de camion.csv
 #    Lo corregí :
             # * modificando la refereencia a ubicacion del archivo
 #    A continuación va el código corregido
@@ -98,7 +98,7 @@ from pprint import pprint
 def leer_camion(nombre_archivo):
     camion=[]
     registro={}
-    with open('../python_UNSAM/Notas/ejercicios_python/Data/camion.csv',"rt") as f:
+    with open('../Data/camion.csv',"rt") as f:
         filas = csv.reader(f)
         encabezado = next(filas)
         for fila in filas:
