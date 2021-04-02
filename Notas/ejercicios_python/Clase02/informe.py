@@ -9,11 +9,11 @@ ganancia = 0.0
 
 def leer_camion(camion):
     lista_camion = []
-    with open('../python_UNSAM/Notas/ejercicios_python/Data/camion.csv', 'rt') as c:
+    with open('../Data/camion.csv', 'rt') as c:
         lineas = csv.reader(c)
         next(lineas)
         for linea in lineas:
-            nombre = linea[0] 
+            nombre = linea[0]
             cajones = int(linea[1])
             precio = float(linea[2])
             dicc_camion = {'nombre': nombre, 'cajones' : cajones, 'precio' : precio}
@@ -22,36 +22,36 @@ def leer_camion(camion):
 
 def costo_camion(costo_camion):
     costo = 0.0
-    with open('../python_UNSAM/Notas/ejercicios_python/Data/camion.csv', 'rt') as c:
+    with open('../Data/camion.csv', 'rt') as c:
         lineas = csv.reader(c)
         next(lineas)
         for linea in lineas:
             cajones = int(linea[1])
             precio = float(linea[2])
-            costo += cajones * precio 
+            costo += cajones * precio
     return costo
 
 def leer_precios(precios):
-    dicc_precios = {}  
-    with open('../python_UNSAM/Notas/ejercicios_python/Data/precios.csv', 'rt') as p:    
+    dicc_precios = {}
+    with open('../Data/precios.csv', 'rt') as p:
         lineas = csv.reader(p)
         for linea in lineas:
             try:
-                nombre = linea[0] 
+                nombre = linea[0]
                 precio = float(linea[1])
                 dicc_precios[nombre] = precio
             except IndexError:
                 pass
-    return dicc_precios          
+    return dicc_precios
 
 def buscar_precio(fruta):
     precio_fruta = 0
-    with open('../python_UNSAM/Notas/ejercicios_python/Data/precios.csv', 'rt') as f:
+    with open('../Data/precios.csv', 'rt') as f:
         lineas = csv.reader(f)
         for linea in lineas:
             try:
                 nombre = linea[0]
-                precio = linea[1] 
+                precio = linea[1]
                 if nombre == fruta:
                     precio_fruta = precio
                     print(precio_fruta)
@@ -64,7 +64,7 @@ print('-------------------------------------------------------------------------
 path_camion = '../Data/camion.csv'
 path_precios_venta = '../Data/precios.csv'
 
-camion = leer_camion(path_camion) 
+camion = leer_camion(path_camion)
 costo = costo_camion(path_precios_venta)
 precios = leer_precios(path_precios_venta)
 # print(precios['Naranja'])
