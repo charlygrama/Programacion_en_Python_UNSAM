@@ -38,7 +38,7 @@ def minimo(lista):
     '''
     # m guarda el minimo de los elementos a medida que recorro la lista.
     m = 1000 # se iniciliza m
-    for e in lista: # Recorro la lista y voy guardando el mayor
+    for e in lista: # Recorro la lista y voy guardando el menor
         if e < m:
             m = e
     return m
