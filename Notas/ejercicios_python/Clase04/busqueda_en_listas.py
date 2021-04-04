@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Ejercicio 4.6: Búsquedas de un elemento
 
 def buscar_u_elemento(lista, e):
