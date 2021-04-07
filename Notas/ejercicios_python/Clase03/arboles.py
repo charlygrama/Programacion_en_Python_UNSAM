@@ -27,7 +27,6 @@ def especies(lista_arboles):
 
 archivo = leer_parque('../Data/arbolado.csv', 'GENERAL PAZ')
 conjunto = especies(archivo)
-# pprint(archivo)
 print('-'*65)
 pprint(conjunto)
 print('-'*65)
