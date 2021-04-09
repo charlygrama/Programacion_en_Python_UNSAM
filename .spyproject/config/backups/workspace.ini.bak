@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['Notas\\ejercicios_python\\Clase03\\informe.py', 'Notas\\ejercicios_python\\Clase03\\tabla_informe.py', 'Notas\\04_Listas_y_Listas\\05_Arboles2_LC.md', 'Notas\\ejercicios_python\\Clase04\\propaga.py', 'Notas\\04_Listas_y_Listas\\02_IteradoresLista.md', 'Notas\\04_Listas_y_Listas\\06_Cierre.md']
+recent_files = []
 
