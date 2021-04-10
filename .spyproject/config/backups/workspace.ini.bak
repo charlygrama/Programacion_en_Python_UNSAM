@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = []
+recent_files = ['Notas\\ejercicios_python\\Clase06\\5_1.py', 'Notas\\ejercicios_python\\Clase06\\generala.py', 'C:\\users\\carlos\\anaconda3\\lib\\random.py']
 
