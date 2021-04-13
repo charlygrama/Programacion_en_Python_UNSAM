@@ -45,6 +45,6 @@ array = np.array(temperatura)
 
 np.savetxt('../Data/Temperaturas.npy', array)
 
-np.loadtxt('Temperaturas.npy')
+np.loadtxt('../Data/Temperaturas.npy')
 
 #%%
