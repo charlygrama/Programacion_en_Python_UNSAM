@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 temperaturas = np.loadtxt('../Data/Temperaturas.npy')
-plt.hist(temperaturas,bins=30)
+plt.hist(temperaturas,bins=200)
 
 
 
