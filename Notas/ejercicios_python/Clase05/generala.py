@@ -18,32 +18,32 @@ def tirada():
             cant_veces = max(cant_rep)
         moda = mode(tiradas)
             
-        print(f'tirada: {tiradas}')
-        print(f'el número mas repetido es: {moda}')
-        print(f'Se repite {cant_veces} veces')
-        elegir = input('¿Elegir número? s/n : ')
+    #     print(f'tirada: {tiradas}')
+    #     print(f'el número mas repetido es: {moda}')
+    #     print(f'Se repite {cant_veces} veces')
+    #     elegir = input('¿Elegir número? s/n : ')
         
-        if elegir.lower() == 's':
-            numero = input('número: ')
-            for i in range(cant_veces):
-                lista_repetidos.append(numero)
-        else:
-            pass
-        cant_dados -= cant_dados
+    #     if elegir.lower() == 's':
+    #         numero = input('número: ')
+    #         for i in range(cant_veces):
+    #             lista_repetidos.append(numero)
+    #     else:
+    #         pass
+    #     cant_dados -= cant_dados
         
-        for i in range(cant_dados):
-            tiradas.append(random.randint(1,6))
-        for p, e in enumerate(tiradas):
-            rep = tiradas.count(e)
-            cant_rep.append(rep)
-            cant_veces = max(cant_rep)
-        moda = mode(tiradas)
-        for i in tiradas:
-            if not numero in tiradas:
-                cant_dados = cant_dados
-            else:
-                lista_repetidos.append(numero)
-                cant_dados -= cant_dados
+    #     for i in range(cant_dados):
+    #         tiradas.append(random.randint(1,6))
+    #     for p, e in enumerate(tiradas):
+    #         rep = tiradas.count(e)
+    #         cant_rep.append(rep)
+    #         cant_veces = max(cant_rep)
+    #     moda = mode(tiradas)
+    #     for i in tiradas:
+    #         if not numero in tiradas:
+    #             cant_dados = cant_dados
+    #         else:
+    #             lista_repetidos.append(numero)
+    #             cant_dados -= cant_dados
     return cant_veces, moda
 
 generala = tirada() 

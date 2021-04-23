@@ -2,46 +2,44 @@
 # 5.3 El album de Figuritas
 import random
 import numpy as np
+
 #%%
 ### Ejercicio 5.9: Crear
 def crear_album(figus_total):
-    album = np.zeros(figus_total)
+    album = np.zeros(figus_total, dtype = int )
     return album
-   
-# A = []
-# album = crear_album(A) 
 #%%
 ### Ejercicio 5.10: Incompleto
-def album_incompleto(A):
+def  album_incompleto(A):
     if 0 in A:
         incompleto = True
     else:
         incompleto = False
-
     return incompleto
-
-# estado = album_incompleto(album)
 #%%
 ### Ejercicio 5.11: Comprar 
+comprada = []
 def comprar_figu(figus_total):
-    comprada = random.randint(1, figus_total)
-    return comprada
-    
-# figu_comprada = comprar_figu(figus_total)
-# # print('figu comprada: ', figu_comprada)    
+    comprada.append(random.randint(1, figus_total))
+    return comprada 
 #%%
 ### Ejercicio 5.12: Cantidad de compras 
 def cuantas_figus(figus_total):
-    nuevo_album = crear_album(figus_total)
+    album = crear_album(figus_total)
     cant_compradas = 0
-    incompleto = album_incompleto(nuevo_album)
+    compradas = []
+    incompleto = True
     while incompleto == True:
-        comprada = comprar_figu(figus_total)
+        compradas = comprar_figu(figus_total)
         cant_compradas += 1
-        if not comprada in nuevo_album:
-            np.append(nuevo_album, comprada)
-    return cant_compradas, nuevo_album  
+        for i in album:
+            if compradas in comprada:
+                pass
+            else:
+                album[i] = comprada
+        incompleto = album_incompleto(album)
+    return cant_compradas, album  
 
-n = 670
+n = 5
 compradas, album = cuantas_figus(n)
 #%%
