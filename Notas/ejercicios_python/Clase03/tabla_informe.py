@@ -58,7 +58,7 @@ def hacer_informe(camion, precios):
     return lista
 
 
-print('-'*30)
+print('-'*45)
 
 path_camion = '../Data/camion.csv'
 path_precios_venta = '../Data/precios.csv'
@@ -68,7 +68,7 @@ precios = leer_precios(path_precios_venta)
 informe = hacer_informe(camion, precios)
 for nombre, cajones, precio, cambio in informe:
         print(f'{nombre:>10s} {cajones:>10d} {precio:>10.2f} {cambio:>10.2f}')
-print('-'*30)
+print('-'*45)
 
 
 
