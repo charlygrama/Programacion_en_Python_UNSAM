@@ -20,24 +20,25 @@ dados = tirar()
 print(dados)
 #%%
 # Escribí otra función llamada `es_generala(tirada)` que devuelve `True` si y sólo si los cinco dados de la lista `tirada` son iguales
-import random
 
-lista = []
 def tirada():
+    lista = []
     for i in range(5):
         lista.append(random.randint(1,6))
     return lista
 
-cond = True
-def es_generala(tirada):
-    for i in range(len(tirada)):
-        t = len(tirada) - 1
-        for j in range(t):
-            if tirada[i] == tirada[j]:
-                cond = True
-            else:
-                cond = False
-                break
+def es_generala(generala):
+    cond = False
+    tamanio = len(generala)
+    if tamanio == 5:
+        for i in range(len(generala)):
+            t = len(generala) - 1
+            for j in range(t):
+                if generala[i] == generala[j]:
+                    cond = True
+                else:
+                    cond = False
+                    break
     return cond
 
 dados = tirada()
