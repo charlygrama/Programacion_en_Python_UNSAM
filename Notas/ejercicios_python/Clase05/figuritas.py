@@ -5,9 +5,12 @@ import numpy as np
 
 #%%
 ### Ejercicio 5.9: Crear
+figus_total = 5 
+
 def crear_album(figus_total):
-    album = np.zeros(figus_total, dtype = int )
+    album = np.zeros(figus_total, dtype=int)
     return album
+
 #%%
 ### Ejercicio 5.10: Incompleto
 def  album_incompleto(A):
@@ -16,30 +19,37 @@ def  album_incompleto(A):
     else:
         incompleto = False
     return incompleto
+
 #%%
 ### Ejercicio 5.11: Comprar 
 comprada = []
 def comprar_figu(figus_total):
-    comprada.append(random.randint(1, figus_total))
+    comprada = random.randint(1, figus_total)
     return comprada 
+
 #%%
 ### Ejercicio 5.12: Cantidad de compras 
 def cuantas_figus(figus_total):
-    album = crear_album(figus_total)
+    album_nuevo = crear_album(figus_total)
     cant_compradas = 0
-    compradas = []
     incompleto = True
-    while incompleto == True:
-        compradas = comprar_figu(figus_total)
-        cant_compradas += 1
-        for i in album:
-            if compradas in comprada:
-                pass
+    while incompleto:
+        for i, comprada in enumerate(album_nuevo):    
+            comprada = comprar_figu(figus_total)
+            cant_compradas += 1
+            if not comprada in album_nuevo:
+                album_nuevo[i] = 1
             else:
-                album[i] = comprada
-        incompleto = album_incompleto(album)
-    return cant_compradas, album  
+                album_nuevo[i] += 1
+                
+        incompleto = album_incompleto(album_nuevo)
+    return cant_compradas, album_nuevo 
 
-n = 5
-compradas, album = cuantas_figus(n)
+album = crear_album(figus_total)
+incompleto = album_incompleto(album)
+comprada = comprar_figu(figus_total)
+cant_compradas = cuantas_figus(figus_total)
+print(cant_compradas)
+
+# compradas, album = cuantas_figus(n)
 #%%
