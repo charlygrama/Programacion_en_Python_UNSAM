@@ -1,8 +1,8 @@
-[Contenidos](../Contenidos.md) \| [Anterior (1 Control de errores)](01_Excepciones.md) \| [Próximo (3 Cuestiones de diseño)](03_Flexibilidad.md)
+[Contenidos](../Contenidos.md) \| [Anterior (2 Control de errores)](02_Excepciones.md) \| [Próximo (4 Cuestiones de diseño)](04_Flexibilidad.md)
 
-# 7.2 El módulo principal
+# 7.3 El módulo principal
  
-En esta sección introducimos el concepto de **módulo principal**. 
+En esta sección introducimos el concepto de **módulo principal**. Dejamos [este video](https://youtu.be/TsWym9qYs4M) con una introducción breve a esta sección y la siguiente.
 
 ### Función principal
 
@@ -143,6 +143,9 @@ precios = sys.argv[2]
 ...
 ```
 
+Para ir un poco más allá, podés mirar el módulo [argparse](https://docs.python.org/3/library/argparse.html#module-argparse) de Python permite escribir interfaces para programas que corren por linea de comandos de una manera amigables y profesional.
+
+
 ### Standard I/O
 
 Los archivos de entrada y salida estándard (Standard Input / Output (stdio)) son archivos que se portan como archivos normales, pero están definidos por el sistema operativo.
@@ -246,7 +249,7 @@ Recordá trabajar siempre con las últimas versiones de tus archivos.
 Usando estas ideas, agregá a tu programa `informe.py` una función `main()` que tome una lista de parámetros en la línea de comandos y produzca la misma salida que antes.
 
 ```bash
-bash % python3 informe.py Data/camion.csv Data/precios.csv
+bash % python3 informe.py ../Data/camion.csv ../Data/precios.csv
 ```
 
 También deberías poder ejecutarlo del siguiente modo dentro del intérprete interactivo de Python:
@@ -281,7 +284,7 @@ Total cost: 47671.15
 Finalmente, modificá tus programas `informe.py` y `costo_camion.py` para que puedan ser ejecutados como scripts desde la línea de comandos:
 
 ```bash
-bash $ python3 informe.py Data/camion.csv Data/precios.csv
+bash $ python3 informe.py ../Data/camion.csv ../Data/precios.csv
     Nombre    Cajones     Precio     Cambio
  ---------- ---------- ---------- ----------
       Lima        100      $32.2       8.02
@@ -298,5 +301,6 @@ Costo total: 47671.15
 
 _Aclaración:_  En el ejercicio anterior ya agregaste una función `main()` a tu código. En este simplemente deberías verificar si `__name__ == '__main__'` y llamar a esa función para que se ejecute automáticamente cuando llames a tu programa desde la línea de comandos. 
 
-[Contenidos](../Contenidos.md) \| [Anterior (1 Control de errores)](01_Excepciones.md) \| [Próximo (3 Cuestiones de diseño)](03_Flexibilidad.md)
+
+[Contenidos](../Contenidos.md) \| [Anterior (2 Control de errores)](02_Excepciones.md) \| [Próximo (4 Cuestiones de diseño)](04_Flexibilidad.md)
 

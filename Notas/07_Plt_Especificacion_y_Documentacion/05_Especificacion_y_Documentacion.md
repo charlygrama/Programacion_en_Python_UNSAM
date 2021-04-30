@@ -1,8 +1,8 @@
-[Contenidos](../Contenidos.md) \| [Anterior (3 Cuestiones de diseño)](03_Flexibilidad.md) \| [Próximo (5 Estilos de codeo)](05_Estilo.md)
+[Contenidos](../Contenidos.md) \| [Anterior (4 Cuestiones de diseño)](04_Flexibilidad.md) \| [Próximo (6 Estilos de codeo)](06_Estilo.md)
 
-# 7.4 Contratos: Especificación y Documentación
+# 7.5 Contratos: Especificación y Documentación
 
-En esta unidad formalizamos algunos temas que ya mencionamos brevemente en las clases anteriores sobre la especificación y documentación de funciones.
+En esta unidad formalizamos algunos temas que ya mencionamos brevemente en las clases anteriores sobre la especificación y documentación de funciones. Dejamos [este video](https://youtu.be/cKVP5-Z4_RE) con una introducción breve a esta sección y la siguiente.
 
 Trabajaremos informalmente con conceptos formales. Por ejemplo, trataremos de responder en algunos casos concretos: ¿qué condiciones debe cumplir una función al comenzar? ¿Qué condiciones se mantinen durante su ejecución? ¿Qué debemos garantizar cuando se termina de ejecutar? Y veremos algunas técnicas para tener en cuenta estas condiciones.
 
@@ -14,9 +14,7 @@ Comenzamos formalizando un poco más algunos conceptos relacionados con la docum
 
 En Python tenemos dos convenciones diferentes para documentar nuestro código:
 la *documentación* propiamente dicha (lo que ponemos entre `'` o
-`'''` al principio de cada función o módulo), y los *comentarios*
-(`#`). En la mayoría de los lenguajes de programación hay convenciones
-similares. ¿Por qué tenemos dos formas diferentes de documentar?
+`'''` al principio de cada función o módulo se llama _docstring_), y los *comentarios* (`#`). En la mayoría de los lenguajes de programación hay convenciones similares. ¿Por qué tenemos dos formas diferentes de documentar?
 
 La *documentación* tiene como objetivo explicar *qué* hace el código.
 La documentación está dirigida a cualquier persona que desee utilizar la
@@ -174,6 +172,9 @@ En el ejemplo anterior, la función división nos garantiza que si se satisface 
 
 Notar que al especificar un problema con pre y poscondición estamos definiendo qué es lo que debe suceder. En ningún momento decimos cómo es que esto sucede. Para una misma especificación podemos definir varias funciones que cumplan el contrato, y cada una puede resolverlo a su manera.
 
+Por ejemplo, volviendo a los ejemplos que trabajamos antes, mirá la documentación del `csv.reader`. Deberías nota que la precondición dice que el primer parámetro debe ser un interable y no un archivo específicamente.
+
+
 ### Aseveraciones
 
 Retomamos acá el concepto de aseveración que introdujimos en la [Sección 4.1](../04_Listas_y_Listas/01_Debugger.md#aseveraciones-assert). Tanto las precondiciones como las poscondiciones pueden pensarse como *aseveraciones* (en inglés *assertions*). Es decir, afirmaciones realizadas en un momento particular de la ejecución sobre el estado computacional. Si una aseveración llegara a ser falsa, se levanta una excepción interrumpiendo la normal ejecución del programa.
@@ -227,7 +228,7 @@ def division(dividendo, divisor):
     return dividendo / divisor
 ```
 
-Es interesante discutir un poco en detalle este ejemplo. La función *asume* que el divisor es no nulo. Esto tiene sentido, ya que no podemos dividir por cero. Podríamos atrapar el error y, si nos pasan un divisor nulo, devolver por ejemplo *cero*. De esta forma evitamos que se termine el programa. Pero ¿tiene sentido esto? ¿Nos ahorra un problema o nos genera un nuevo problema? No es una buena práctica atrapar errores que no sabemos manejar. Que `1/0` devuelva cero en principio **no es correcto**. Como ya mencionamos en la [Sección 7.1](../07_Plt_Especificacion_y_Documentacion/01_Excepciones.md#buenas-prácticas-al-administrar-excepciones), es mejor que los errores generen excepciones ruidosamente y no atraparlas si no sabemos exactamente cómo manejarlas.
+Es interesante discutir un poco en detalle este ejemplo. La función *asume* que el divisor es no nulo. Esto tiene sentido, ya que no podemos dividir por cero. Podríamos atrapar el error y, si nos pasan un divisor nulo, devolver por ejemplo *cero*. De esta forma evitamos que se termine el programa. Pero ¿tiene sentido esto? ¿Nos ahorra un problema o nos genera un nuevo problema? No es una buena práctica atrapar errores que no sabemos manejar. Que `1/0` devuelva cero en principio **no es correcto**. Como ya mencionamos en la [Sección 7.2](../07_Plt_Especificacion_y_Documentacion/02_Excepciones.md#buenas-prácticas-al-administrar-excepciones), es mejor que los errores generen excepciones ruidosamente y no atraparlas si no sabemos exactamente cómo manejarlas.
 
 Veamos otro ejemplo, tal vez más interesante. Consideremos una función `sumar_enteros(desde, hasta)` que implementa la sumatoria *sum_i=desde^hasta i*.
 
@@ -313,7 +314,7 @@ def potencia(base, exp):
     return resultado
 ```
 
-En este caso, el invariante del ciclo es que la variable `resultado` contiene el valor de la potencia correspondiente al índice `i` de la iteración. Teniendo en cuenta esta condición, es fácil ver que `resultado` debe comenzar el ciclo con un valor de 1, ya que ese es el valor correspondiente a $p^0$.
+En este caso, el invariante del ciclo es que la variable `resultado` contiene el valor de la potencia correspondiente al índice `i` de la iteración. Teniendo en cuenta esta condición, es fácil ver que `resultado` debe comenzar el ciclo con un valor de 1, ya que ese es el valor correspondiente a  `base ** 0`.
 
 De la misma manera, si la operación que se quiere realizar es sumar todos los
 elementos de una lista, el invariante será que una variable `suma` contenga la suma de todos los elementos ya recorridos. Antes de empezar a recorrer la lista, según lo expresado en este invariante, esta `suma` debe ser 0 ya que no recorrió ningún elemento.
@@ -332,7 +333,7 @@ En resumen, el concepto de invariante de ciclo es una herramienta que nos permit
 - un algoritmo termina (y no se cuelga).
 
 ### Ejercicio 7.7: Invariante en sumas
-En el [Ejercicio 7.6](../07_Plt_Especificacion_y_Documentacion/04_Especificacion_y_Documentacion.md#ejercicio-76-sumas), escribiste una función `sumar_enteros(desde, hasta)` que utiliza un ciclo. ¿Cuál es el invariante de este ciclo?
+En el [Ejercicio 7.6](../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion.md#ejercicio-76-sumas), escribiste una función `sumar_enteros(desde, hasta)` que utiliza un ciclo. ¿Cuál es el invariante de este ciclo?
 
 ## Parámetros mutables e inmutables
 
@@ -436,5 +437,5 @@ def collatz(n):
 ```
 
 
-[Contenidos](../Contenidos.md) \| [Anterior (3 Cuestiones de diseño)](03_Flexibilidad.md) \| [Próximo (5 Estilos de codeo)](05_Estilo.md)
+[Contenidos](../Contenidos.md) \| [Anterior (4 Cuestiones de diseño)](04_Flexibilidad.md) \| [Próximo (6 Estilos de codeo)](06_Estilo.md)
 

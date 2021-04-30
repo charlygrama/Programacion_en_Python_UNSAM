@@ -1,6 +1,6 @@
-[Contenidos](../Contenidos.md) \| [Anterior (5 Complejidad de algoritmos)](05_Complejidad.md) \| [Próximo (7 Cierre de la clase)](07_Cierre.md)
+[Contenidos](../Contenidos.md) \| [Anterior (6 Complejidad de algoritmos)](06_Complejidad.md) \| [Próximo (8 Cierre de la clase)](08_Cierre.md)
 
-# 6.6 Gráficos de complejidad
+# 6.7 Gráficos de complejidad
 
 ## Contar la cantidad de operaciones de un algoritmo
 
@@ -23,8 +23,9 @@ Esta modificación de la función cuenta (y devuelve) además cuántas comparaci
 
 ```python
 def busqueda_secuencial_(lista, x):
-    '''Si x está en la lista devuelve el índice de su primer aparición, 
-    de lo contrario devuelve -1.
+    '''Si x está en la lista devuelve el índice de su primera aparición, 
+    de lo contrario devuelve -1. Además devuelve la cantidad de comparaciones
+    que hace la función.
     '''
     comps = 0 # inicializo en cero la cantidad de comparaciones
     pos = -1
@@ -39,8 +40,8 @@ def busqueda_secuencial_(lista, x):
 
 Si querés acceder a la posición podés usar `busqueda_secuencial_(lista, x)[0]` y para acceder a la cantidad de comparaciones que hizo `busqueda_secuencial_(lista, x)[1]`.
 
-### Ejercicio 6.16: Contar comparaciones en la búsqueda binaria
-Modificá el código de búsqueda binaria (`busqueda_binaria(lista, x)`) introducido en la [Sección 6.4](../06_Organización_y_Complejidad/04_BusqBinaria.md#búsqueda-binaria), de forma que devuelva (además de la posición del elemento en la lista) la cantidad de comparaciones que realizó el algoritmo para encontrarlo o decidir que no está.
+### Ejercicio 6.19: Contar comparaciones en la búsqueda binaria
+Modificá el código de búsqueda binaria (`busqueda_binaria(lista, x)`) introducido en la [Sección 6.5](../06_Organización_y_Complejidad/05_BusqBinaria.md#búsqueda-binaria), de forma que devuelva (además de la posición del elemento en la lista) la cantidad de comparaciones que realizó el algoritmo para encontrarlo o decidir que no está.
 
 ## Gráficar la cantidad de comparaciones promedio
 
@@ -90,9 +91,9 @@ def experimento_secuencial_promedio(lista, m, k):
 
 Como las listas tienen `n = 100` elementos y estoy buscando un número cualquiera entre `m` números diferentes, es casi seguro que no lo voy a encontrar y que voy a tener que recorrer toda la lista para concluir esto (aunque en algún caso puede ser que esté y lo encuentre antes de recorrerla toda!). Entonces el promedio de comparaciones va a dar cercano al largo `n` de la lista, quizás un poco menor. Tiene una componente  aleatoria, es un *experimento* numérico.
 
-Si decíamos que buscar un elemento era un *experimento elemental* digamos que repetir *k* experimentos elementales y calcular el promedio de comparaciones es un *experimeto de promedios*.
+Si decíamos que buscar un elemento era un *experimento elemental* digamos que repetir *k* experimentos elementales y calcular el promedio de comparaciones es un *experimento de promedios*.
 
-Grafiquemos los resultados de estos *experimetos de promedios* para diferentes listas de largos `n` entre 1 y 256. Es decir, estaremos graficando la cantidad de comparaciones que hace en promedio el algoritmo de bśuqeda secuencial sobre una lista de largo `n`, para diferentes valores de `n`.
+Grafiquemos los resultados de estos *experimentos de promedios* para diferentes listas de largos `n` entre 1 y 256. Es decir, estaremos graficando la cantidad de comparaciones que hace en promedio el algoritmo de búsqueda secuencial sobre una lista de largo `n`, para diferentes valores de `n`.
 
 ```python
 import matplotlib.pyplot as plt
@@ -111,18 +112,19 @@ for i, n in enumerate(largos):
 # ahora grafico largos de listas contra operaciones promedio de búsqueda.
 plt.plot(largos,comps_promedio,label = 'Búsqueda Secuencial')
 plt.xlabel("Largo de la lista")
-plt.ylabel("Cantidad de comparaiciones")
+plt.ylabel("Cantidad de comparaciones")
 plt.title("Complejidad de la Búsqueda")
 plt.legend()
+plt.show()
 ```
 
 ![Imagen Complejidad Secuencial](./compl_sec.png)
 
 En la próxima clase estudiaremos en detalle la librería `matplotlib` que ya empezamos a usar la clase pasada. Por ahora solo agregamos la función `plot(x, y)` a la que se le pasan dos vectores (o listas) `x` e `y` y realiza una gráfico de líneas uniendo los puntos con esas coordenadas. El parámetro `label` permite ponerle un nombre a la curva que se muestra luego con la función `plt.legend()`.
 
-Este gráfico parece medio sonzo, pero en el próximo ejercicio va a ir tomando color.
+Este gráfico parece medio sonso, pero en el próximo ejercicio va a ir tomando color.
 
-### Ejercicio 6.17: Búsqueda binaria vs. búsqueda secuencial
+### Ejercicio 6.20: Búsqueda binaria vs. búsqueda secuencial
 En este Ejercicio vamos a rehacer los gráficos del ejemplo anterior, pero primero cambiando el algoritmo de búsqueda y luego comparando ambos algoritmos.
 
 1. Usando `experimento_secuencial_promedio(lista, m, k)` como base, escribí una función `experimento_binario_promedio(lista, m, k)` que cuente la cantidad de comparaciones que realiza en promedio (entre `k` experimentos elementales) la búsqueda binaria sobre la lista pasada como parámetro.
@@ -133,5 +135,5 @@ En este Ejercicio vamos a rehacer los gráficos del ejemplo anterior, pero prime
 El código de este ejercicio guardalo en `plot_bbin_vs_bsec.py`.
 
 
-[Contenidos](../Contenidos.md) \| [Anterior (5 Complejidad de algoritmos)](05_Complejidad.md) \| [Próximo (7 Cierre de la clase)](07_Cierre.md)
+[Contenidos](../Contenidos.md) \| [Anterior (6 Complejidad de algoritmos)](06_Complejidad.md) \| [Próximo (8 Cierre de la clase)](08_Cierre.md)
 

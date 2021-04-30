@@ -9,13 +9,14 @@ En la segunda mitad retomamos nuestra discusión sobre algoritmos de búsqueda e
 
 
 
-* [6.1 Scripting](01_Scripts.md)
-* [6.2 Funciones](02_Funciones.md)
-* [6.3 Módulos](03_Modulos.md)
-* [6.4 Búsqueda binaria](04_BusqBinaria.md)
-* [6.5 Complejidad de algoritmos](05_Complejidad.md)
-* [6.6 Gráficos de complejidad](06_gráficos_de_complejidad.md)
-* [6.7 Cierre de la clase](07_Cierre.md)
+* [6.1 Repaso de temas pasados](01_Repaso.md)
+* [6.2 Scripting](02_Scripts.md)
+* [6.3 Funciones](03_Funciones.md)
+* [6.4 Módulos](04_Modulos.md)
+* [6.5 Búsqueda binaria](05_BusqBinaria.md)
+* [6.6 Complejidad de algoritmos](06_Complejidad.md)
+* [6.7 Gráficos de complejidad](07_gráficos_de_complejidad.md)
+* [6.8 Cierre de la clase](08_Cierre.md)
 
 
 [Contenidos](../Contenidos.md) \| [Anterior (5 Aleatoridad)](../05_Random_Plt_Dbg/00_Resumen.md) \| [Próximo (7 Diseño, especificación, documentación y estilo.)](../07_Plt_Especificacion_y_Documentacion/00_Resumen.md)

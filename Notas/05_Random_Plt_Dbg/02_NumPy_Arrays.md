@@ -137,7 +137,7 @@ array([2, 4, 6, 8])
 ```
 El límite derecho nunca está en la lista. 
 
-También podés usar `np.linspace()` para crear un vector especificando el **primer número**, el **último número**, y la **cantidad** de elementos:
+También podés usar `np.linspace()` para crear un vector de valores equiespaciados especificando el **primer número**, el **último número**, y la **cantidad** de elementos:
 
 ```python
 >>> np.linspace(0, 10, num=5)
@@ -843,6 +843,7 @@ Escribí un archivo `plotear_temperaturas.py` que lea el archivo de datos  `Temp
 ```python
 import matplotlib.pyplot as plt
 plt.hist(temperaturas,bins=25)
+plt.show() #el show no hace falta en algunos entornos. A veces lo omitiremos.
 ```
 
 Ajustá la cantidad de _bins_ para que el gráfico se vea lo mejor posible.

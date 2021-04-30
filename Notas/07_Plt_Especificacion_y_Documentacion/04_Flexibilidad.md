@@ -1,6 +1,6 @@
-[Contenidos](../Contenidos.md) \| [Anterior (2 El módulo principal)](02_Modulo_principal.md) \| [Próximo (4 Contratos: Especificación y Documentación)](04_Especificacion_y_Documentacion.md)
+[Contenidos](../Contenidos.md) \| [Anterior (3 El módulo principal)](03_Modulo_principal.md) \| [Próximo (5 Contratos: Especificación y Documentación)](05_Especificacion_y_Documentacion.md)
 
-# 7.3 Cuestiones de diseño
+# 7.4 Cuestiones de diseño
 
 En esta breve sección, volvemos a discutir algunas decisiones de diseño que tomamos antes.
 
@@ -87,8 +87,7 @@ lines = ['Quinoto,50,91.1','Naranja,75,123.45', ... ]
 
 son iterables de texto, por lo tanto los usaremos como "patos" en la función `read_data()`.
 
-La flexibilidad que este diseño permite es considerable.
-*Pregunta: ¿Debemos favorecer u oponernos a esta flexibilidad?* 
+Si el concepto te resulta oscuro, tal vez [esta explicación](https://youtu.be/pxzLSMqU_7U) te ayude. La flexibilidad que este diseño permite es considerable. *Pregunta: ¿Debemos favorecer u oponernos a esta flexibilidad?* 
 
 
 ### Buenas prácticas en el diseño de bibliotecas
@@ -105,7 +104,7 @@ Las bibliotecas de código suelen ser más útiles si son flexibles. No restrinj
 >>>
 ```
 
-Actualmente la función solicita el nombre de un archivo, pero podés hacer el código más flexible. Modificá la función de modo que funcione con cualquier objeto ó iterable que se comporte como un archivo. Por ejemplo:
+Actualmente la función solicita el nombre de un archivo, pero podés hacer el código más flexible. Modificá la función de modo que funcione con cualquier objeto o iterable que se comporte como un archivo. Por ejemplo:
 
 
 ```python
@@ -114,12 +113,14 @@ Actualmente la función solicita el nombre de un archivo, pero podés hacer el c
 >>> with gzip.open('../Data/camion.csv.gz', 'rt') as file:
 ...      camion = fileparse.parse_csv(file, types=[str,int,float])
 ...
->>> lines = ['name,cajones,precio', 'Lima,100,34.23', 'Naranja,50,91.1', 'Mburucuya,75,45.1']
+>>> lines = ['nombre,cajones,precio', 'Lima,100,34.23', 'Naranja,50,91.1', 'Mburucuya,75,45.1']
 >>> camion = fileparse.parse_csv(lines, types=[str,int,float])
 >>>
 ```
 
-Y ahora que pasa si le pasás un nombre de archivo como antes ?
+Atención: Si lo hacés con delicadeza, los cambios a hacer en tu código son realmente mínimos. Fijate en la documentación de la función `csv.reader` (por ejemplo con `help(csv.reader)`) que lo que le pasás debe ser un objeto iterable, pero no necesariamente un archivo.
+
+Una vez que hayas incorporado esta modificación, ¿qué pasa si le pasás un nombre de archivo como antes?
 
 ```python
 >>> camion = fileparse.parse_csv('../Data/camion.csv', types=[str,int,float])
@@ -136,5 +137,5 @@ Arreglá las funciones `leer_camion()` y `leer_precios()` en el archivo `informe
 Por ahora dejamos estos archivos y pasamos a otras discusiones. Dejá estos archivos listos para entregar al final de la clase. 
 
 
-[Contenidos](../Contenidos.md) \| [Anterior (2 El módulo principal)](02_Modulo_principal.md) \| [Próximo (4 Contratos: Especificación y Documentación)](04_Especificacion_y_Documentacion.md)
+[Contenidos](../Contenidos.md) \| [Anterior (3 El módulo principal)](03_Modulo_principal.md) \| [Próximo (5 Contratos: Especificación y Documentación)](05_Especificacion_y_Documentacion.md)
 

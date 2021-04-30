@@ -1,10 +1,8 @@
-[Contenidos](../Contenidos.md) \| [Próximo (2 Funciones)](02_Funciones.md)
+[Contenidos](../Contenidos.md) \| [Anterior (1 Repaso de temas pasados)](01_Repaso.md) \| [Próximo (3 Funciones)](03_Funciones.md)
 
-# 6.1 Scripting
+# 6.2 Scripting
 
-[oski]: # (Esto es un comentario que no se vé en el render MarkDown.)
-
-En esta sección profundizaremos en el proceso de crear scripts en Python.
+En esta sección profundizaremos en el proceso de crear scripts en Python. Esta y las próximas secciones tienen un [video](https://youtu.be/spjiuud3dQ4) asociado que podés ver antes de leer este texto.
 
 ### ¿Qué es un script?
 
@@ -146,13 +144,13 @@ Lo ideal es que una función sea una *caja negra*. Una función debería operar 
 
 ### Doc-strings
 
-Es buena costumbre incluír documentación en forma de doc-strings. Un doc-string ó "texto de documentación" es texto ubicado en la línea inmediata después del nombre de la función. El doc-string provee información a quien lee la función, pero también se integra con la función `help()`, IDEs y otras herramientas de programación y documentación.     
+Es buena costumbre incluir documentación en forma de doc-strings. Un doc-string ó "texto de documentación" es texto ubicado en la línea inmediata después del nombre de la función. El doc-string provee información a quien lee la función, pero también se integra con la función `help()`, IDEs y otras herramientas de programación y documentación.     
 
 ```python
 def leer_precios(nombre_archivo):
     '''
     Lee precios de un archivo de datos CSV con dos columnas.
-    La primer columna debe contener un nombre y la segunda un precio.
+    La primera columna debe contener un nombre y la segunda un precio.
     '''
     precios = {}
     with open(nombre_archivo) as f:
@@ -162,7 +160,7 @@ def leer_precios(nombre_archivo):
     return precios
 ```
 
-Un doc-string debe ser conciso e indicar qué hace la función. Si es necesario, podés incluír un ejemplo corto de uso y una descripción de los argumentos.
+Un doc-string debe ser conciso e indicar qué hace la función. Si es necesario, podés incluir un ejemplo corto de uso y una descripción de los argumentos.
 
 Veremos también la clase que viene que es posible incluir en el doc-string una descripción de lo que se espera que cumplan los parámetros y lo que garantizamos que cumpla la salida (como un contrato).
 
@@ -174,7 +172,7 @@ También podés agregar, en la definición de funciones, notas sobre el tipo de 
 def leer_precios(nombre_archivo: str) -> dict:
     '''
     Lee precios de un archivo de datos CSV con dos columnas.
-    La primer columna debe contener un nombre y la segunda un precio.
+    La primera columna debe contener un nombre y la segunda un precio.
     Devuelve un diccionario {nombre:precio, ...}
     '''
     precios = {}
@@ -196,13 +194,15 @@ En el [Ejercicio 3.16](../03_Datos/05_Formato.md#ejercicio-316-un-desafío-de-fo
 El programa tiene algunas funciones, como:
 
 ```python
-# informe.py
+# tabla_informe.py
 import csv
 
 def leer_camion(nombre_archivo):
     '''
-    Read a cajon camion file into a list of dictionaries with keys
-    name, cajones, and precio.
+    Lee un archivo de lotes en un camión 
+    y lo devuelve como lista de diccionarios con claves
+    nombre, cajones, precio.
+
     '''
     camion = []
     with open(nombre_archivo) as f:
@@ -212,7 +212,7 @@ def leer_camion(nombre_archivo):
         for row in rows:
             record = dict(zip(headers, row))
             cajon = {
-                'name' : record['name'],
+                'nombre' : record['nombre'],
                 'cajones' : int(record['cajones']),
                 'precio' : float(record['precio'])
             }
@@ -238,14 +238,14 @@ for row in informe:
 
 En el siguiente ejercicio vamos a volver a ese programa y organizarlo mejor usando funciones.
 
-### Ejercicio 6.1: Estructurar un programa como una colección de funciones
+### Ejercicio 6.4: Estructurar un programa como una colección de funciones
 Volvé a tu programa `tabla_informe.py` y modificalo de modo que todas las operaciones principales, incluyendo cálculos e impresión, sean llevados a cabo por una colección de funciones. Guarda la nueva versión en un archivo `informe_funciones.py`. Más específicamente:
 
 * Creá una función `imprimir_informe(informe)` que imprima el informe.
 * Cambiá la última parte del programa de modo que consista sólo en una serie de llamados a funciones, sin ningún cómputo.
 
 
-### Ejercicio 6.2: Crear una función de alto nivel para la ejecución del programa.
+### Ejercicio 6.5: Crear una función de alto nivel para la ejecución del programa.
 
 Juntá la última parte de tu programa en una única función `informe_camion(nombre_archivo_camion, nombre_archivo_precios)`. Deberías obtener una función que al llamarla como sigue, imprima el informe:
 
@@ -278,5 +278,5 @@ En Python es muy fácil escribir código en forma de un script relativamente poc
 En algún momento, si ese script crece, vas a desear haber sido un poco más organizado desde el comienzo. Tratá de organizar tu código en funciones simples. Es un buen principio es que cada función haga una sola cosa sencilla y concreta, que tenga una sola responsabilidad.
 
 
-[Contenidos](../Contenidos.md) \| [Próximo (2 Funciones)](02_Funciones.md)
+[Contenidos](../Contenidos.md) \| [Anterior (1 Repaso de temas pasados)](01_Repaso.md) \| [Próximo (3 Funciones)](03_Funciones.md)
 
