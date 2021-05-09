@@ -3,7 +3,7 @@ import csv
 costo = {}
 from pprint import pprint
 def costo_camion(costo_camion):
-    with open('G:/proyectos/python/python_UNSAM/Notas/ejercicios_python/Data/missing.csv', 'rt') as f:
+    with open('../Data/camion.csv', 'rt') as f:
         lineas = csv.reader(f)
         for n_fila, fila in enumerate(lineas, start = 1):
             print(n_fila, fila)
@@ -17,4 +17,4 @@ def costo_camion(costo_camion):
                 print('------------------------------------------------------------------')
     return lineas
 
-costo = costo_camion('../Data/missing.csv')
+costo = costo_camion('../Data/camion.csv')

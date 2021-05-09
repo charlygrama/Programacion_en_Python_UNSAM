@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #%%
 ### Ejercicio 4.18: Lectura de todos los árboles
 # escribí otra `leer_arboles(nombre_archivo)` que lea el archivo indicado y devuelva una **lista de diccionarios** con la información de todos los árboles en el archivo. La función debe devolver una lista conteniendo un diccionario por cada árbol con todos los datos.

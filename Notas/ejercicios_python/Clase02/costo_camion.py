@@ -2,7 +2,7 @@
 import csv
 def costo_camion(costo_camion):
     costo = 0.0
-    with open('g:/proyectos/python/python_UNSAM/Notas/ejercicios_python/Data/camion.csv', 'rt') as c:
+    with open('../Data/camion.csv', 'rt') as c:
         lineas = csv.reader(c)
         next(lineas)
         for linea in lineas:
